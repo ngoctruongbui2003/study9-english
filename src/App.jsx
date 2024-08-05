@@ -1,35 +1,29 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useSelector, useDispatch } from 'react-redux';
-import './App.css'
-import Button from '@mui/material/Button';
-import { increment } from './redux/slices/counterSlice';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import routes from './routes'
+import Header from './components/Header/Header'
+import Default from './components/Default/Default'
 
 function App() {
-  const count = useSelector((state) => state.counter.value)
-  const dispatch = useDispatch()
-
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button variant="contained" onClick={() => dispatch(increment())}>count is {count}</Button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <Routes>
+        { routes.map((route, index) => {
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <>
+                  {route.isShowHeader ? <Header /> : <Default />}
+                  <route.page/>
+                </>
+              }
+            />
+          )
+        }) }
+      </Routes>
+    </Router>
   )
 }
 
