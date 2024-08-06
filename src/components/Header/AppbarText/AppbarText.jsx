@@ -14,6 +14,10 @@ function AppbarText() {
             link: "/my-account/courses",
         },
         {
+            text: "Messenger",
+            link: "/messenger",
+        },
+        {
             text: "Đề thi online",
             link: "/tests",
         },
@@ -23,7 +27,7 @@ function AppbarText() {
         },
         {
             text: "Blog",
-            link: "/posts",
+            link: "/blogs",
         },
     ]
 

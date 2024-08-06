@@ -17,7 +17,11 @@ function App() {
               element={
                 <>
                   {route.isShowHeader ? <Header /> : <Default />}
-                  <route.page/>
+
+                  <main style={{ paddingTop: '60px' }}>
+                    <route.page/>
+                  </main>
+
                   <Footer />
                 </>
               }

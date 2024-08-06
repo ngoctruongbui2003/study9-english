@@ -1,7 +1,6 @@
 import React from 'react'
 import CardTest from './CardTest/CardTest'
 import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
 
 function ListCards() {
     return (

@@ -134,7 +134,7 @@ function FilterTests() {
 
     return (
         <Grid container mb={5}>
-            <Grid item xs={9}>
+            <Grid item xs={9} pb={3} sx={{ borderBottom: '1px solid #000' }}>
                 <Box>
                     <Typography
                         variant="h1"

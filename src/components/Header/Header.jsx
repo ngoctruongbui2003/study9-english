@@ -11,54 +11,62 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <Box px={3} sx={{
+    <Box sx={{ 
+      position: 'fixed',
+      top: 0,
+      left: 0,
       width: '100%',
-			height: '60px',
-			display: 'flex',
-			alignItems: 'center',
-			justifyContent: 'space-between',
-			overflowX: 'auto',
-			bgcolor: '#fff',
-      borderBottom: '1px solid #e0e0e0',
+      zIndex: 1000,
     }}>
-      {/* Icon Study9 */}
-      <Box sx={{
-        flexGrow: 4
-      }} >
-          <Typography
-            onClick={() => navigate('/')}
-						variant='h3'
-						sx={{
-							fontWeight: 'bold',
-              color: '#000',
-              cursor: 'pointer',
-              textTransform: 'uppercase',
-              letterSpacing: '2px',
-						}}
-					>
-						Study9
-					</Typography>
-      </Box>
-      <Box sx={{
-        flexGrow: 6,
+      <Box px={3} sx={{
+        width: '100%',
+        height: '60px',
         display: 'flex',
-        justifyContent: 'right',
         alignItems: 'center',
-        gap: 2
+        justifyContent: 'space-between',
+        overflowX: 'auto',
+        bgcolor: '#fff',
+        borderBottom: '1px solid #e0e0e0',
       }}>
-        <AppbarText />
+        {/* Icon Study9 */}
+        <Box sx={{
+          flexGrow: 4
+        }} >
+            <Typography
+              onClick={() => navigate('/')}
+              variant='h3'
+              sx={{
+                fontWeight: 'bold',
+                color: '#000',
+                cursor: 'pointer',
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+              }}
+            >
+              Study9
+            </Typography>
+        </Box>
+        <Box sx={{
+          flexGrow: 6,
+          display: 'flex',
+          justifyContent: 'right',
+          alignItems: 'center',
+          gap: 2
+        }}>
+          <AppbarText />
 
-        {/* Sign in */}
-        <Button variant="contained" onClick={() => navigate('/login')}>
-          Đăng nhập
-        </Button>
+          {/* Sign in */}
+          <Button variant="contained" onClick={() => navigate('/login')}>
+            Đăng nhập
+          </Button>
 
-        {/* User
-        <WrapperAppbarText>
-          <Typography variant='span'>User</Typography>
-        </WrapperAppbarText> */}
+          {/* User
+          <WrapperAppbarText>
+            <Typography variant='span'>User</Typography>
+          </WrapperAppbarText> */}
+        </Box>
+        
       </Box>
-      
     </Box>
   )
 }

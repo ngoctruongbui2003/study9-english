@@ -1,21 +1,23 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Grid from '@mui/material/Grid'
-import Link from '@mui/material/Link'
 import FilterTests from './FilterTests/FilterTests'
 import ListCards from './ListCards/ListCards'
 
 
 function Tests() {
     return (
-        <Box mx={20} py={5}>
-            {/* Header */}
-            <FilterTests />
-            
-
-            {/* Main */}
-            <ListCards />
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }} py={5}>
+            <Box sx={{ maxWidth: '80vw' }}>
+                {/* Header */}
+                <FilterTests />
+                {/* Main */}
+                <ListCards />
+            </Box>
         </Box>
     )
 }
