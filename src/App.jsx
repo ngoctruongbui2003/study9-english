@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import routes from './routes'
 import Header from './components/Header/Header'
 import Default from './components/Default/Default'
+import Footer from './components/Footer/Footer'
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
                 <>
                   {route.isShowHeader ? <Header /> : <Default />}
                   <route.page/>
+                  <Footer />
                 </>
               }
             />

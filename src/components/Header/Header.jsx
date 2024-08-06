@@ -4,8 +4,12 @@ import AppbarText from './AppbarText/AppbarText';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Link from '@mui/material/Link';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <Box px={3} sx={{
       width: '100%',
@@ -20,8 +24,9 @@ function Header() {
       {/* Icon Study9 */}
       <Box sx={{
         flexGrow: 4
-      }}>
+      }} >
           <Typography
+            onClick={() => navigate('/')}
 						variant='h3'
 						sx={{
 							fontWeight: 'bold',
@@ -44,7 +49,9 @@ function Header() {
         <AppbarText />
 
         {/* Sign in */}
-        <Button variant="contained">Đăng nhập</Button>
+        <Button variant="contained" onClick={() => navigate('/login')}>
+          Đăng nhập
+        </Button>
 
         {/* User
         <WrapperAppbarText>
